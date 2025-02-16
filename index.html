@@ -6,7 +6,6 @@
     <title>MakeMyTrip Clone</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -27,14 +26,14 @@
     <!-- Main Section -->
     <div class="search-container">
         <div class="tabs">
-            <button class="active">Flights</button>
-            <button>Hotels</button>
-            <button>Trains</button>
-            <button>Buses</button>
-            <button>Cabs</button>
+            <button class="tab active">Flights</button>
+            <button class="tab">Hotels</button>
+            <button class="tab">Trains</button>
+            <button class="tab">Buses</button>
+            <button class="tab">Cabs</button>
         </div>
 
-        <div class="flight-options">
+        <div class="trip-options">
             <label><input type="radio" name="trip" checked> One Way</label>
             <label><input type="radio" name="trip"> Round Trip</label>
             <label><input type="radio" name="trip"> Multi City</label>
@@ -51,12 +50,13 @@
             </div>
             <div class="input-group">
                 <label>Departure</label>
-                <input type="date" value="2025-02-17">
+                <input type="date">
             </div>
             <div class="input-group">
                 <label>Travellers & Class</label>
                 <select>
                     <option>1 Traveller, Economy</option>
+                    <option>2 Travellers, Business</option>
                 </select>
             </div>
         </div>
