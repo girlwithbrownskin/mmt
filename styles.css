@@ -1,6 +1,5 @@
-/* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background: #f4f4f4;
@@ -63,7 +62,7 @@ body {
     padding-bottom: 10px;
 }
 
-.tabs button {
+.tabs .tab {
     background: none;
     border: none;
     font-size: 16px;
@@ -71,19 +70,19 @@ body {
     padding: 10px;
 }
 
-.tabs button.active {
+.tabs .active {
     border-bottom: 3px solid #0071c2;
     color: #0071c2;
     font-weight: bold;
 }
 
-.flight-options {
+.trip-options {
     display: flex;
     gap: 15px;
     margin: 15px 0;
 }
 
-.flight-options label {
+.trip-options label {
     font-size: 14px;
 }
 
@@ -91,6 +90,7 @@ body {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .input-group {
@@ -147,4 +147,20 @@ body {
 
 .search-btn:hover {
     background: #005fa3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-box {
+        flex-direction: column;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+    }
 }
