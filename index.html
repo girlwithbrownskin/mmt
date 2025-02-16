@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeMyTrip Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">make<span>my</span>trip</div>
+        <div class="nav-links">
+            <button class="login-btn">Login or Create Account</button>
+            <div class="dropdown">
+                <span>IN | ENG <i class="fas fa-caret-down"></i></span>
+            </div>
+            <div class="currency">
+                <span>INR <i class="fas fa-caret-down"></i></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="search-container">
+        <div class="tabs">
+            <button class="active">Flights</button>
+            <button>Hotels</button>
+            <button>Trains</button>
+            <button>Buses</button>
+            <button>Cabs</button>
+        </div>
+
+        <div class="flight-options">
+            <label><input type="radio" name="trip" checked> One Way</label>
+            <label><input type="radio" name="trip"> Round Trip</label>
+            <label><input type="radio" name="trip"> Multi City</label>
+        </div>
+
+        <div class="search-box">
+            <div class="input-group">
+                <label>From</label>
+                <input type="text" value="Delhi (DEL)">
+            </div>
+            <div class="input-group">
+                <label>To</label>
+                <input type="text" value="Bengaluru (BLR)">
+            </div>
+            <div class="input-group">
+                <label>Departure</label>
+                <input type="date" value="2025-02-17">
+            </div>
+            <div class="input-group">
+                <label>Travellers & Class</label>
+                <select>
+                    <option>1 Traveller, Economy</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="special-fares">
+            <button class="selected">Regular</button>
+            <button>Student</button>
+            <button>Senior Citizen</button>
+            <button>Armed Forces</button>
+            <button>Doctor & Nurses</button>
+        </div>
+
+        <button class="search-btn">SEARCH</button>
+    </div>
+
+</body>
+</html>
