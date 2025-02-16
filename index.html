@@ -10,7 +10,7 @@
 <body>
 
     <!-- Background Image -->
-    <div class="bg-image"></div>
+    <div class="background-container"></div>
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -26,9 +26,9 @@
         </div>
     </nav>
 
-    <!-- Main Search Container -->
+    <!-- Search Box Container -->
     <div class="search-container">
-        <!-- Tabs with Icons -->
+        <!-- Tabs (Flights, Hotels, etc.) -->
         <div class="tabs">
             <button class="tab active"><i class="fas fa-plane"></i> Flights</button>
             <button class="tab"><i class="fas fa-hotel"></i> Hotels</button>
@@ -37,12 +37,14 @@
             <button class="tab"><i class="fas fa-taxi"></i> Cabs</button>
         </div>
 
+        <!-- Trip Type (One Way, Round Trip, Multi City) -->
         <div class="trip-options">
             <label><input type="radio" name="trip" checked> One Way</label>
             <label><input type="radio" name="trip"> Round Trip</label>
             <label><input type="radio" name="trip"> Multi City</label>
         </div>
 
+        <!-- Search Form -->
         <div class="search-box">
             <div class="input-group">
                 <label>From</label>
@@ -65,6 +67,7 @@
             </div>
         </div>
 
+        <!-- Special Fares -->
         <div class="special-fares">
             <button class="selected">Regular</button>
             <button>Student</button>
@@ -73,6 +76,7 @@
             <button>Doctor & Nurses</button>
         </div>
 
+        <!-- Search Button -->
         <button class="search-btn">SEARCH</button>
     </div>
 
