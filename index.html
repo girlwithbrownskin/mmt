@@ -3,28 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mood Swiper</title>
+  <title>Mood Swiper: Desi Edition</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <div class="container">
-    <h1 class="title">What's Your Mood?</h1>
-    <div id="card-container" class="card-container">
-      <!-- Cards will be injected here by JavaScript -->
-    </div>
-    <div class="btn-group">
-      <button id="swipe-left" class="swipe-btn">👎 Nah</button>
-      <button id="swipe-right" class="swipe-btn">👍 Yup</button>
-    </div>
-  </div>
+  <main class="app">
+    <h1 class="title">Swipe Your Mood 🍬</h1>
 
-  <!-- Final Result Popup -->
-  <div id="result" class="result hidden">
-    <h2>Your Mood Is:</h2>
-    <p id="mood-name"></p>
-    <img id="mood-img" src="" alt="Mood Result"/>
-    <button id="restart-btn">Try Again</button>
-  </div>
+    <section class="card-wrapper" id="card-container">
+      <!-- Cards will be generated here -->
+    </section>
+
+    <section id="result" class="result hidden">
+      <div class="stars">✨✨✨</div>
+      <h2>Your Mood Is:</h2>
+      <p id="mood-name"></p>
+      <button id="restart-btn">Try Again</button>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
