@@ -42,38 +42,14 @@ const moods = [
 ];
 
 const results = [
-  {
-    name: "🌪️ Chaotic Good",
-    condition: (score) => score >= 7,
-  },
-  {
-    name: "🌸 Delulu Dreamer",
-    condition: (score) => score === 6,
-  },
-  {
-    name: "💀 Reality-Dodger",
-    condition: (score) => score === 5,
-  },
-  {
-    name: "🔥 Certified Drama Snack",
-    condition: (score) => score === 4,
-  },
-  {
-    name: "💫 Flop Era Explorer",
-    condition: (score) => score === 3,
-  },
-  {
-    name: "🧊 Stone Cold Slay",
-    condition: (score) => score === 2,
-  },
-  {
-    name: "🍵 Mid & Unbothered",
-    condition: (score) => score === 1,
-  },
-  {
-    name: "🫠 Soan Papdi Energy",
-    condition: (score) => score === 0,
-  }
+  { name: "🌪️ Chaotic Good", condition: (score) => score >= 7 },
+  { name: "🌸 Delulu Dreamer", condition: (score) => score === 6 },
+  { name: "💀 Reality-Dodger", condition: (score) => score === 5 },
+  { name: "🔥 Certified Drama Snack", condition: (score) => score === 4 },
+  { name: "💫 Flop Era Explorer", condition: (score) => score === 3 },
+  { name: "🧊 Stone Cold Slay", condition: (score) => score === 2 },
+  { name: "🍵 Mid & Unbothered", condition: (score) => score === 1 },
+  { name: "🫠 Soan Papdi Energy", condition: (score) => score === 0 }
 ];
 
 const cardContainer = document.getElementById("card-container");
@@ -91,16 +67,17 @@ function createCard(mood) {
   card.style.background = mood.color;
   card.textContent = mood.text;
 
-  let offsetX = 0, startX = 0;
+  let startX = 0, currentX = 0, offsetX = 0;
   let dragging = false;
 
-  const drag = (e) => {
+  function onMove(e) {
     if (!dragging) return;
-    offsetX = (e.touches ? e.touches[0].clientX : e.clientX) - startX;
+    currentX = (e.touches ? e.touches[0].clientX : e.clientX);
+    offsetX = currentX - startX;
     card.style.transform = `translateX(${offsetX}px) rotate(${offsetX / 10}deg)`;
-  };
+  }
 
-  const release = () => {
+  function onEnd() {
     dragging = false;
     if (Math.abs(offsetX) > 100) {
       const direction = offsetX > 0 ? "right" : "left";
@@ -124,23 +101,29 @@ function createCard(mood) {
       card.style.transition = "transform 0.3s ease";
       card.style.transform = "translateX(0)";
     }
-  };
+  }
 
   card.addEventListener("mousedown", (e) => {
     dragging = true;
     startX = e.clientX;
+    card.style.transition = "none";
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseup", () => {
+      onEnd();
+      document.removeEventListener("mousemove", onMove);
+    }, { once: true });
   });
-
-  document.addEventListener("mousemove", drag);
-  document.addEventListener("mouseup", release);
 
   card.addEventListener("touchstart", (e) => {
     dragging = true;
     startX = e.touches[0].clientX;
+    card.style.transition = "none";
+    document.addEventListener("touchmove", onMove);
+    document.addEventListener("touchend", () => {
+      onEnd();
+      document.removeEventListener("touchmove", onMove);
+    }, { once: true });
   });
-
-  card.addEventListener("touchmove", drag);
-  card.addEventListener("touchend", release);
 
   return card;
 }
